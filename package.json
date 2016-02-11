@@ -1,0 +1,32 @@
+{
+  "name": "fcc-boilerplate",
+  "version": "0.0.1",
+  "description": "Project name. A FreeCodeCamp challange",
+  "main": "index.html",
+  "scripts": {
+    "dev": "gulp --gulpfile gulp-development.config.js",
+    "build": "NODE_ENV=prod gulp --gulpfile gulp-production.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rdig/fcc-"
+  },
+  "author": "Raul Glogovetan",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "babel-core": "*",
+    "babel-eslint": "*",
+    "babel-loader": "*",
+    "babel-preset-es2015": "*",
+    "del": "*",
+    "eslint": "*",
+    "eslint-loader": "*",
+    "eslint-plugin-babel": "*",
+    "gulp": "*",
+    "gulp-babel": "*",
+    "gulp-connect": "*",
+    "gulp-eslint": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*"
+  }
+}
