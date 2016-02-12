@@ -236,9 +236,8 @@ footer { @include fcc_footer; }
 		left: auto;
 	}
 	.lucky { display: none; }
-	.error {
-		.lucky { display: block; }
-	}
+	.error { .lucky { display: block; } }
+	.noresults { .lucky { display: block; } }
 	footer {
 		bottom: auto;
 		position: static;
@@ -350,6 +349,7 @@ footer { @include fcc_footer; }
 }
 .error {
 	display: none;
+	margin: 0 0 40px 0;
 	.warning {
 		text-align: center;
 		font-size: 13px;
@@ -360,4 +360,15 @@ footer { @include fcc_footer; }
 	display: none;
 	margin: 20px 0 0 0;
 	text-align: center;
+}
+.noresults {
+	display: none;
+	text-align: center;
+	margin: 0 0 40px 0;
+	p {
+		font-size: 13px;
+	}
+	.lucky {
+		font-size: 12px;
+	}
 }

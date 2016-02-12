@@ -11,12 +11,12 @@
 </head>
 <body>
 	<div class="search">
-		<div class="logo"><span class="icon wikipedia"></span></div>
+		<div class="logo"><a href="./"><span class="icon wikipedia"></span></a></div>
 		<div class="input-wrapper">
-			<input type="text" value="" placeholder="Search for an article" />
-			<button type="button"><span class="icon magglass"></span></button>
+			<input id="search-input" type="text" value="" placeholder="Search for an article" />
+			<button id="search-button" type="button"><span class="icon magglass"></span></button>
 		</div>
-		<p class="lucky" id="random">See a <a href="http://en.wikipedia.org/wiki/Special:Random" title="Random Wikipedia Article">random article <span class="icon random"></span></a></p>
+		<p class="lucky">See a <a href="http://en.wikipedia.org/wiki/Special:Random" title="Random Wikipedia Article">random article <span class="icon random"></span></a></p>
 		<div class="loading">
 			<span class="icon loader"></div>
 		</div>
@@ -24,6 +24,10 @@
 	<div class="error">
 		<p class="warning">The API could not be reached. Sorry :(</p>
 		<p class="lucky">May I suggest you try a <a href="http://en.wikipedia.org/wiki/Special:Random" title="Random Wikipedia Article">random article <span class="icon random"></span></a></p>
+	</div>
+	<div class="noresults">
+		<p>No results matched your query.</p>
+		<p class="lucky">Try searching again, or try <a href="http://en.wikipedia.org/wiki/Special:Random" title="Random Wikipedia Article">random article <span class="icon random"></span></a></p>
 	</div>
 	<div class="entries">
 	</div>
