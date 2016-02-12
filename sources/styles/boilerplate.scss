@@ -1,4 +1,5 @@
 @import "normalize";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic);
 
 // All the rest of the folders are relative to 'media-folder'
 // Eg: 'media/icons/'
@@ -6,7 +7,20 @@ $location: ( 'media-folder': '../media' );
 $color: (
 	'default-text': #111111,
 	'footer-link': #27ae60,
-	'default-bk': #FFFFFF
+	'default-bk': #FFFFFF,
+	'input-border': #D9D9D9,
+	'input-border-hover': #b9b9b9,
+	'input-border-top-hover': #a0a0a0,
+	'input-border-active': #4d90fe,
+	'input-placeholder': #cccccc,
+	'input-bk': #FFFFFF,
+	'button-bk': #4285F4,
+	'button-bk-hover': #3B78E7,
+	'button-bk-active': #3367D6,
+	'link': #4285F4,
+	'link-active': #3367D6,
+	'article-description': #555555,
+	'warning': tomato
 );
 $sprite: (
 	'default': 'sprites/rg-fcc-wiki-sprite_v1.svg',
@@ -14,14 +28,20 @@ $sprite: (
 );
 $sprite-position: (
 	'github-light': 0px 0px,
-	'github-dark': -57px 0px
+	'github-dark': -57px 0px,
+	'magglass': -31px -32px,
+	'wikipedia': -56px 0px,
+	'random': 0px -32px
 );
 $icon: (
 	github: 'icons/rg-fcc-icon-github_v1.svg',
 	github-alt: 'icons/rg-fcc-icon-github_v1.png'
 );
-$image: ();
-$animation: ();
+$image: (
+);
+$animation: (
+	preloader: 'animated/preloader.gif'
+);
 
 @mixin debug {
 	border:1px dashed tomato;
@@ -34,6 +54,8 @@ $animation: ();
 @mixin sprites_defaults {
 	width: 16px;
 	height: 16px;
+	display: inline-block;
+	vertical-align: top;
 	@include background_image(
 		map-get($sprite, 'default'),
 		map-get($sprite, 'alt')
@@ -137,6 +159,28 @@ $animation: ();
 	-ms-border-radius: $radius;
 	border-radius: $radius;
 }
+@mixin placeholder($color, $style: italic) {
+	&::-webkit-input-placeholder {
+		background-color: transparent;
+		color: $color;
+		font-style: $style;
+	}
+	&::-moz-placeholder {
+		background-color: transparent;
+		color: $color;
+		font-style: $style;
+	}
+	&:-moz-placeholder {
+		background-color: transparent;
+		color: $color;
+		font-style: $style;
+	}
+	&:-ms-input-placeholder {
+		background-color: transparent;
+		color: $color;
+		font-style: $style;
+	}
+}
 * {
 	box-sizing: border-box;
 	margin: 0 0 0 0;
@@ -146,6 +190,8 @@ html {
 	background-color: map-get($color, 'default-bk');
 }
 body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
 	color: map-get($color, 'default-text');
 }
 footer { @include fcc_footer; }
@@ -156,4 +202,162 @@ footer { @include fcc_footer; }
 		text-align: center;
 		font-style: italic;
 	}
+}
+.icon {
+	@include sprites_defaults;
+	&.magglass {
+		background-position: map-get($sprite-position, 'magglass');
+		margin: 1px -2px 0 0;
+	}
+	&.wikipedia {
+		background-position: map-get($sprite-position, 'wikipedia');
+		width: 74px;
+		height: 48px;
+	}
+	&.random {
+		background-position: map-get($sprite-position, 'random');
+		width: 21px;
+		margin: 1px 0 0 2px;
+	}
+	&.loader {
+		width: 32px;
+		height: 32px;
+		@include background_image(map-get($animation, 'preloader'));
+	}
+}
+.results {
+	.search {
+		height: auto;
+		position: static;
+		margin: 0 auto 0 auto;
+		top: auto;
+		right: auto;
+		bottom: auto;
+		left: auto;
+	}
+	.lucky { display: none; }
+	.error {
+		.lucky { display: block; }
+	}
+	footer {
+		bottom: auto;
+		position: static;
+	}
+}
+.search {
+	@include absolute_center;
+	height: 250px;
+	width: 100%;
+	padding: 20px 20px 20px 20px;
+	text-align: center;
+	@media (min-width: 600px) {
+		width: 560px;
+	}
+	@media (min-width: 600px) { height: 300px; }
+	@media (min-width: 800px) { height: 350px; padding: 50px 20px 20px 20px; }
+}
+.logo {
+	text-align: center;
+	margin: 0 0 20px 0;
+	@media (min-width: 600px) { margin: 0 0 50px 0; }
+}
+.input-wrapper {
+	margin: 0 -4px 0 0;
+	display: inline-block;
+	width: 100%;
+	vertical-align: top;
+	input {
+		font-size: 13px;
+		padding: 5px 60px 5px 10px;
+		@media (min-width: 600px) { padding: 5px 75px 5px 10px; }
+		width: 100%;
+		@include border_radius(1px);
+		border: 1px solid map-get($color, 'input-border');
+		outline: 0;
+		@include placeholder(map-get($color, 'input-placeholder'));
+		background: map-get($color, 'input-bk');
+		@include default_transition(border-color);
+		&:hover {
+			outline: 0;
+			border-color: map-get($color, 'input-border-hover');
+			border-top-color: map-get($color, 'input-border-hover-top');
+		}
+		&:focus {
+			outline: 0;
+			border-color: map-get($color, 'input-border-active');
+		}
+	}
+	button {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		@include border_radius(25px);
+		margin: -40px 5px 0 0px;
+		@media (min-width: 600px) { margin: -40px 20px 0 0px; }
+		position: relative;
+		float: right;
+		outline: 0;
+		border: 0px;
+		background-color: map-get($color, 'button-bk');
+		text-align: center;
+		@include default_transition(background-color);
+		&:hover {
+			outline:0;
+			background-color: map-get($color, 'button-bk-hover');
+		}
+		&:active {
+			outline:0;
+			background-color: map-get($color, 'button-bk-active');
+		}
+	}
+}
+.lucky {
+	margin: 10px 0 0 0;
+	text-align: center;
+	font-size: 12px;
+	a {
+		text-decoration: none;
+		color: map-get($color, 'link');
+		@include default_transition(text-decoration);
+		&:hover { text-decoration: underline; }
+		&:active { color: map-get($color, 'link-active'); }
+	}
+}
+.entries {
+	display: none;
+	margin: 0px auto 0 auto;
+	padding: 0px 20px 40px 20px;
+	@media (min-width: 600px) {
+		width: 560px;
+	}
+}
+.article {
+	margin: 20px 0 0 0;
+	.title {
+		font-size: 15px;
+		a {
+			color: map-get($color, 'link');
+			text-decoration: none;
+			&:hover { text-decoration: underline; }
+			&:active { color: map-get($color, 'link-active'); }
+		}
+	}
+	.description {
+		font-size: 13px;
+		font-style: italic;
+		color: map-get($color, 'article-description');
+	}
+}
+.error {
+	display: none;
+	.warning {
+		text-align: center;
+		font-size: 13px;
+		color: map-get($color, 'warning');
+	}
+}
+.loading {
+	display: none;
+	margin: 20px 0 0 0;
+	text-align: center;
 }

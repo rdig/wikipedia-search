@@ -10,7 +10,23 @@
 	<link href="styles/boilerplate.css" rel="stylesheet" />
 </head>
 <body>
-	<div class="boiler"><p>Go forth a build.</p></div>
+	<div class="search">
+		<div class="logo"><span class="icon wikipedia"></span></div>
+		<div class="input-wrapper">
+			<input type="text" value="" placeholder="Search for an article" />
+			<button type="button"><span class="icon magglass"></span></button>
+		</div>
+		<p class="lucky">See a <a href="http://en.wikipedia.org/wiki/Special:Random" title="Random Wikipedia Article">random article <span class="icon random"></span></a></p>
+		<div class="loading">
+			<span class="icon loader"></div>
+		</div>
+	</div>
+	<div class="error">
+		<p class="warning">The API could not be reached. Sorry :(</p>
+		<p class="lucky">May I suggest you try a <a href="http://en.wikipedia.org/wiki/Special:Random" title="Random Wikipedia Article">random article <span class="icon random"></span></a></p>
+	</div>
+	<div class="entries">
+	</div>
 	<footer>
 		<p>&copy; 2016 <a href="http://glogovetan.com" class="brand" target="_blank">Raul Glogovetan</a>. Project built for a <a href="http://www.freecodecamp.com/" target="_blank">FreeCodeCamp</a> challenge.</p>
 		<a class="github" href="" title="Raul Glogovetan's Public Repository" target="_blank"><span class="icon"></span></a>
