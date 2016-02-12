@@ -23,3 +23,29 @@ const ArticleEntry = (title, link, description) => {
 		'</div>'
 	);
 };
+const ApiRequest = (input) => {
+	$.ajax( {
+		url: Api(input),
+		dataType: 'json',
+		type: 'GET',
+		headers: { 'Api-User-Agent': 'FreeCodeCamp/0.1 (http://www.freecodecamp.com/challenges/build-a-wikipedia-viewer; raul@glogovetan.com)' },
+		beforeSend: () => {
+			Hooks.lucky.hide();
+			Hooks.loading.show();
+		}
+	}).done(function(data) {
+
+		data[1].map((title, i) => {
+			Hooks.entries.append(ArticleEntry(title, data[3][i], data[2][i]));
+		});
+
+		Hooks.loading.hide();
+		Hooks.entries.fadeIn();
+
+	}).fail(function() {
+
+		Hooks.loading.hide();
+		Hooks.error.fadeIn();
+
+	});
+};
