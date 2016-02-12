@@ -15,3 +15,11 @@ const Hooks = {
 	error: $('.error'),
 	entries: $('.entries')
 };
+const ArticleEntry = (title, link, description) => {
+	return (
+		'<div class="article">' +
+		'<p class="title"><a href="' + link + '"></a>' + title + '</p>' +
+		'<p class="description">' + description + '</p>' +
+		'</div>'
+	);
+};
