@@ -33,6 +33,7 @@ const ApiRequest = (input) => {
 		headers: { 'Api-User-Agent': 'FreeCodeCamp/0.1 (http://www.freecodecamp.com/challenges/build-a-wikipedia-viewer; raul@glogovetan.com)' },
 		beforeSend: () => {
 			Hooks.noresults.hide();
+			Hooks.error.hide();
 			Hooks.entries.empty();
 			Hooks.body.addClass('results');
 			Hooks.loading.show();
@@ -61,6 +62,8 @@ const ApiRequest = (input) => {
 	Hooks.input.on('keyup', function(e) {
 		if (this.value === '') {
 			Hooks.entries.empty();
+			Hooks.noresults.hide();
+			Hooks.error.hide();
 			Hooks.body.removeClass('results');
 			return;
 		}
