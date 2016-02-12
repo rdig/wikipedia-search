@@ -18,11 +18,10 @@ const Hooks = {
 	noresults: $('.noresults')
 };
 const ArticleEntry = (title, link, description) => {
-	description = description || 'No description could be found.';
 	return (
 		'<div class="article">' +
 		'<p class="title"><a href="' + link + '">' + title + '</a></p>' +
-		'<p class="description">' + description + '</p>' +
+		'<p class="description">' + ( description || 'No description could be found.' ) + '</p>' +
 		'</div>'
 	);
 };

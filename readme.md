@@ -1,22 +1,16 @@
-## Disregard this readme
-
-This readme is, like the rest of this repository a boilerplate. This is not the readme for this project, but a readme to be used as a starting point for new projects.
-
----
-
 Welcome!
 
-The project is ...
+The project is a simple Wikipedia search engine. It searches for a given keyword via Wikipedia's API
 
-This was build to complete a [FreeCodeCamp challenge](http://www.freecodecamp.com/). You can use the code as you see fit, just don't use my personal name (scrub it out). See [license](./license.md).
+This was build to complete a [FreeCodeCamp challenge](http://www.freecodecamp.com/challenges/build-a-wikipedia-viewer). You can use the code as you see fit, just don't use my personal name (scrub it out). See [license](./license.md).
 
 ## Features
 
-- Feature 1
+- Responsive
 
-- Feature 2
+- Clean interface
 
-- Feature 3
+- In accordance with Wikipedia's API Etiquette
 
 ## Screenshot
 
@@ -85,4 +79,4 @@ This project uses additional libraries, each with it's own license:
 
 #### Icons
 
-This project uses icons by [Name here](http://)
+This project uses icons by [Pham Thi Dieu Linh](https://thenounproject.com/phdieuli/)

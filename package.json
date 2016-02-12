@@ -1,7 +1,7 @@
 {
-  "name": "fcc-boilerplate",
+  "name": "fcc-wikipedia",
   "version": "0.0.1",
-  "description": "Project name. A FreeCodeCamp challange",
+  "description": "Simple Wikipedia Search Engine. A FreeCodeCamp challange",
   "main": "index.html",
   "scripts": {
     "dev": "gulp --gulpfile gulp-development.config.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rdig/fcc-"
+    "url": "https://github.com/rdig/fcc-wikipedia"
   },
   "author": "Raul Glogovetan",
   "license": "MPL-2.0",
