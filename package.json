@@ -1,7 +1,7 @@
 {
-  "name": "fcc-wikipedia",
-  "version": "0.0.1",
-  "description": "Simple Wikipedia Search Engine. A FreeCodeCamp challange",
+  "name": "wikipedia-search",
+  "version": "0.0.2",
+  "description": "An interface that allows users to quickly search for articles from Wikipedia",
   "main": "index.html",
   "scripts": {
     "dev": "gulp --gulpfile gulp-development.config.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rdig/fcc-wikipedia"
+    "url": "https://github.com/rdig/wikipedia-search"
   },
   "author": "Raul Glogovetan",
   "license": "MPL-2.0",
